@@ -6,13 +6,13 @@
 /*   By: sabdulla <sabdulla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 14:44:48 by sabdulla          #+#    #+#             */
-/*   Updated: 2022/04/07 15:07:31 by sabdulla         ###   ########.fr       */
+/*   Updated: 2022/04/12 16:16:48 by sabdulla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprint.h"
+#include "ft_printf.h"
 
-int	ft_parse (va_list ptr, char c)
+int	ft_parse(va_list ptr, char c)
 {
 	if (c == 'c')
 		return (ft_putchar (va_arg (ptr, int)));
@@ -23,22 +23,25 @@ int	ft_parse (va_list ptr, char c)
 	if (c == 'x' || c == 'X')
 		return (ft_hex (va_arg (ptr, unsigned long int), c));
 	if (c == 'u')
-		return (ft_putuint(va_arg (ptr, unsigned int)));
+		return (ft_print_unumber(va_arg (ptr, unsigned int)));
 	if (c == 'p')
 		return (ft_ptr(va_arg (ptr, unsigned long long)));
 	if (c == '%')
 		return (ft_putchar ('%'));
+	else
+		return (ft_putchar (c));
 	return (0);
 }
 
-int ft_printf(char *str, ... )
+int	ft_printf(const char *str, ...)
 {
-	int i = 0;
-	int counter = 0;
-	va_list ptr;
+	int			i;
+	int			counter;
+	va_list		ptr;
 
+	i = 0;
+	counter = 0;
 	va_start (ptr, str);
-
 	while (str[i] != '\0')
 	{
 		if (str[i] != '%')

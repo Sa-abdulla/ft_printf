@@ -6,13 +6,13 @@
 /*   By: sabdulla <sabdulla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 14:32:32 by sabdulla          #+#    #+#             */
-/*   Updated: 2022/04/07 15:14:29 by sabdulla         ###   ########.fr       */
+/*   Updated: 2022/04/12 15:38:36 by sabdulla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprint.h"
+#include "ft_printf.h"
 
-void ft_putnbr(int num, int *counter)
+void	ft_putnbr(int num, int *counter)
 {
 	if (num == -2147483648)
 	{
@@ -37,10 +37,10 @@ void ft_putnbr(int num, int *counter)
 	}
 }
 
-int ft_print_number(int num)
+int	ft_print_number(int num)
 {
-	int counter;
-	
+	int	counter;
+
 	counter = 0;
 	ft_putnbr(num, &counter);
 	return (counter);

@@ -6,7 +6,7 @@
 #    By: sabdulla <sabdulla@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/04 14:40:54 by sabdulla          #+#    #+#              #
-#    Updated: 2022/04/07 15:11:48 by sabdulla         ###   ########.fr        #
+#    Updated: 2022/04/12 16:18:22 by sabdulla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS	= $(SRCS:.c=.o)
 
 RM		= rm -rf
 
-CC		= gcc
+CC		= gcc 
 
 CFLAGS	= -Wall -Wextra -Werror
 
